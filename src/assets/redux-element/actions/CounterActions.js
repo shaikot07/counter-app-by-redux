@@ -1,10 +1,20 @@
 // action gula ki ki hobe se gula akhane 
 
-import { INCREMENT } from "../constant/counterConstant"
+import { DECREMENT, INCREMENT, RESET } from "../constant/counterConstant"
 
 
-const incrementCounter = () =>{
+export const incrementCounter = () =>{
       return {
             type : INCREMENT
+      }
+}
+export const decrementCounter = () =>{
+      return {
+            type : DECREMENT
+      }
+}
+export const resetCounter = () =>{
+      return {
+            type : RESET
       }
 }
