@@ -1,62 +1,67 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setPaymentAddressInfo } from '../../fetures/paymentInfoSlice';
 
 const CheckOutFrom = () => {
-       const handleSaveAddress= (event)=>{
+      const dispatch = useDispatch()
+      const handleSaveAddress = (event) => {
             event.preventDefault()
             const form = event.target
             const fullName = form.fullName.value;
             const shippingAddress = form.shippingAddress.value;
-            const mobileNumber=form.mobileNumber.value;
-            const billingAddress= form.billingAddress.value;
-            const paymentAddressInfo={fullName, shippingAddress,mobileNumber,billingAddress,};
-            console.log(paymentAddressInfo);
-       }
+            const mobileNumber = form.mobileNumber.value;
+            const billingAddress = form.billingAddress.value;
+            const paymentAddressInfo = { fullName, shippingAddress, mobileNumber, billingAddress, };
+            // console.log(paymentAddressInfo);
+            // Dispatch the action to update the Redux state
+            dispatch(setPaymentAddressInfo(paymentAddressInfo));
+      }
       return (
-            <div className='p-2 w-[320px] bg-emerald-500 ml-10'>
+            <div className='p-2 w-[320px] border border-[#F85454]'>
                   <h3 className='text-2xl'>Add New Delivery Address</h3>
-                  <form onSubmit={ handleSaveAddress}>
-                        <div className='grid grid-cols-1 gap-2 '> 
+                  <form onSubmit={handleSaveAddress}>
+                        <div className='grid grid-cols-1 gap-2 '>
                               {/* for full name  data*/}
                               <div>
-                              <label className="block text-md  text-gray-700">Full Name</label>
-                              <input type="text"
-                                    placeholder="Input Full name"
-                                    required
-                                    name='fullName'
-                                    className="appearance-none border border-primary rounded-md py-2 px-4 w-full max-w-xs text-gray-700 leading-tight focus:outline-none focus:border-primary focus:ring-primary"
-                              />
+                                    <label className="block text-md  text-gray-700">Full Name</label>
+                                    <input type="text"
+                                          placeholder="Input Full name"
+                                          required
+                                          name='fullName'
+                                          className="appearance-none border border-primary rounded-md py-2 px-4 w-full max-w-xs text-gray-700 leading-tight focus:outline-none focus:border-primary focus:ring-primary"
+                                    />
                               </div>
                               {/* for mobile data */}
                               <div>
-                              <label className="block text-md  text-gray-700">Mobile Number</label>
-                              <input type="text"
-                                    placeholder="Mobile Number"
-                                    required
-                                    name='mobileNumber'
-                                    className="appearance-none border border-primary rounded-md py-2 px-4 w-full max-w-xs text-gray-700 leading-tight focus:outline-none focus:border-primary focus:ring-primary"
-                              />
+                                    <label className="block text-md  text-gray-700">Mobile Number</label>
+                                    <input type="text"
+                                          placeholder="Mobile Number"
+                                          required
+                                          name='mobileNumber'
+                                          className="appearance-none border border-primary rounded-md py-2 px-4 w-full max-w-xs text-gray-700 leading-tight focus:outline-none focus:border-primary focus:ring-primary"
+                                    />
                               </div>
-                                 {/* for shipping address data */}
+                              {/* for shipping address data */}
                               <div>
-                              <label className="block text-md  text-gray-700">Shipping Address</label>
-                              <input type="text"
-                                    placeholder="Input Your Address"
-                                    required
-                                    name='shippingAddress'
-                                    className="appearance-none border border-primary rounded-md py-2 px-4 w-full max-w-xs text-gray-700 leading-tight focus:outline-none focus:border-primary focus:ring-primary"
-                              />
+                                    <label className="block text-md  text-gray-700">Shipping Address</label>
+                                    <input type="text"
+                                          placeholder="Input Your Address"
+                                          required
+                                          name='shippingAddress'
+                                          className="appearance-none border border-primary rounded-md py-2 px-4 w-full max-w-xs text-gray-700 leading-tight focus:outline-none focus:border-primary focus:ring-primary"
+                                    />
                               </div>
                               {/* for billing address data  */}
                               <div>
-                              <label className="block text-md  text-gray-700">Billing Address</label>
-                              <input type="text"
-                                    placeholder="Your Billing Address"
-                                    required
-                                    name='billingAddress'
-                                    className="appearance-none border border-primary rounded-md py-2 px-4 w-full max-w-xs text-gray-700 leading-tight focus:outline-none focus:border-primary focus:ring-primary"
-                              />
+                                    <label className="block text-md  text-gray-700">Billing Address</label>
+                                    <input type="text"
+                                          placeholder="Your Billing Address"
+                                          required
+                                          name='billingAddress'
+                                          className="appearance-none border border-primary rounded-md py-2 px-4 w-full max-w-xs text-gray-700 leading-tight focus:outline-none focus:border-primary focus:ring-primary"
+                                    />
                               </div>
-                               
+
 
                         </div>
                         {/* from submit button here  */}
