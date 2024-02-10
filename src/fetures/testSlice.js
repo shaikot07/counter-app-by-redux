@@ -10,7 +10,7 @@ const testSlice= createSlice({
       initialState,
       reducers:{
             // here added operations
-            setPaymentAddressInfo(state, action){
+            setNewActions(state, action){
                   state.data = { ...state.data, ...action.payload };
             }
       }
