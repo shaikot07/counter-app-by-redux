@@ -1,5 +1,6 @@
 import Counter from "./component/Counter"
 import CheckOutFrom from "./component/checkoutFrom/CheckOutFrom"
+import CountDown from "./component/checkoutFrom/CountDown"
 import Tom from "./component/checkoutFrom/Tom"
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Counter/>
         <CheckOutFrom/>
         <Tom/>
+        <CountDown/>
       </div>
       
     </>
