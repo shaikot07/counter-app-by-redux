@@ -13,6 +13,11 @@ const Tom = () => {
                   <h2> name:{payInfoData.data.fullName}</h2>
                   <h2> address:{payInfoData.shippingAddress}</h2>
                   <h2> mobile:{payInfoData.mobileNumber}</h2>
+                  <div>
+                  <h2> name:{payInfoData.data.fullName}</h2>
+                  <h2> address:{payInfoData.shippingAddress}</h2>
+                  <h2> mobile:{payInfoData.mobileNumber}</h2>
+                  </div>
             </div>
       );
 };
